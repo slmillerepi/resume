@@ -5,7 +5,6 @@ position: "Graduate Student"
 address: "University of Georgia College of Public Health"
 phone: 423 544-2453 
 email: 'savannah.hammerton@uga.edu'
-twitter: @smhammerton
 github: smhammerton
 linkedin: smhammerton
 date: "`r format(Sys.time(), '%B %Y')`"
@@ -15,6 +14,11 @@ output: vitae::awesomecv
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
+library(googledrive)
+library(readxl)
+library(tibble)
+#googledrive::drive_download('cv_data', overwrite = TRUE)
+cv_data <- readxl::read_xlsx('cv_data.xlsx')
 ```
 
 # Some stuff about me
@@ -25,39 +29,66 @@ library(vitae)
 
 # Education
 
-```{r}
-library(tibble)
-tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Informal studies", "1889-91", "Flying University", "Warsaw, Poland",
-  "Master of Physics", "1893", "Sorbonne Université", "Paris, France",
-  "Master of Mathematics", "1894", "Sorbonne Université", "Paris, France"
-) %>% 
-  detailed_entries(Degree, Year, Institution, Where)
-```
-
-# Nobel Prizes
-
-```{r}
-tribble(
-  ~Year, ~Type, ~Desc,
-  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
-  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
-) %>% 
-  brief_entries(
-    glue::glue("Nobel Prize in {Type}"),
-    Year, 
-    Desc
+```{r education}
+cv_data %>% 
+  filter(section == 'education', in_resume == 'TRUE') %>% 
+  detailed_entries(
+    title,
+    paste0(start, "-", as.integer(end)),
+    institution, 
+    loc
   )
 ```
 
-# Publications
+# Research
 
 ```{r}
-library(dplyr)
-knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+cv_data %>% 
+  filter(section == 'projects', in_resume == 'TRUE') %>% 
+  detailed_entries(
+    institution, 
+    end,
+    title,
+    description
+  )
 
-bibliography_entries("packages.bib") %>%
-  arrange(desc(author$family), issued)
+```
+
+# Relevant Experience 
+
+```{r experience}
+cv_data %>% 
+  filter(section == 'rel_exp', in_resume == 'TRUE') %>% 
+  detailed_entries(
+    title,
+    paste0(start, "-", as.integer(end)),
+    institution, 
+    loc,
+    description
+  )
+```
+
+# Certifications
+
+```{r certifications}
+cv_data %>% 
+  filter(section == 'certs', in_resume == 'TRUE') %>%
+  detailed_entries(
+    loc,
+    end, 
+    title
+  )
+```
+
+# Skills
+
+```{r skills}
+cv_data %>% 
+  filter(section == 'skills', in_resume == 'TRUE') %>% 
+  detailed_entries(
+    description,
+    NA,
+    title
+  )
 ```
 
