@@ -3,7 +3,7 @@ name: Savannah
 surname: Hammerton
 position: "Graduate Student"
 address: "University of Georgia College of Public Health"
-phone: 423 544-2453 
+phone: 423 544 2453 
 email: 'savannah.hammerton@uga.edu'
 github: smhammerton
 linkedin: smhammerton
@@ -21,11 +21,9 @@ library(tibble)
 cv_data <- readxl::read_xlsx('cv_data.xlsx')
 ```
 
-# Some stuff about me
+# About
 
- * I poisoned myself doing research.
- * I was the first woman to win a Nobel prize
- * I was the first person and only woman to win a Nobel prize in two different sciences.
+Graduate student working towards MS in Epidemiology & Biostatistics (concentration in Epidemiology) and Graduate Certificate in Infectious Disease Epidemiology. Particular interest and research emphasis in infectious diseases, infectious disease dynamics, and One Health. Past experience in healthcare, providing strong contextual understanding of disease determinants, prevention, treatment, and outcomes, as well as an understanding of the "real world" implications of public health research and practice on individuals. This experience also drives context-aware data analytic approaches to answering epidemiological questions. Passionate and driven to learn as much as possible in order to become an effective epidemiologist, with the goal of building a career that benefits others. 
 
 # Education
 
@@ -37,6 +35,20 @@ cv_data %>%
     paste0(start, "-", as.integer(end)),
     institution, 
     loc
+  )
+```
+
+# Relevant Experience 
+
+```{r experience}
+cv_data %>% 
+  filter(section == 'rel_exp', in_resume == 'TRUE') %>% 
+  detailed_entries(
+    title,
+    paste0(start, "-", as.integer(end)),
+    institution, 
+    loc,
+    description
   )
 ```
 
@@ -54,19 +66,7 @@ cv_data %>%
 
 ```
 
-# Relevant Experience 
-
-```{r experience}
-cv_data %>% 
-  filter(section == 'rel_exp', in_resume == 'TRUE') %>% 
-  detailed_entries(
-    title,
-    paste0(start, "-", as.integer(end)),
-    institution, 
-    loc,
-    description
-  )
-```
+\bigskip
 
 # Certifications
 
@@ -92,3 +92,16 @@ cv_data %>%
   )
 ```
 
+# Organizations 
+
+```{r organizations}
+cv_data %>% 
+  filter(section == 'org', in_resume == 'TRUE') %>% 
+  detailed_entries(
+    description, 
+    paste0(start, '-', end),
+    institution,
+    title
+    
+  )
+```
