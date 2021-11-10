@@ -1,7 +1,7 @@
 ---
 name: Savannah
 surname: Hammerton
-position: "Graduate Student"
+position: "Graduate Student, Epidemiology & Biostatistics"
 address: "University of Georgia College of Public Health"
 phone: 423 544 2453 
 email: 'savannah.hammerton@uga.edu'

@@ -1,0 +1,30 @@
+---
+name: Savannah
+surname: Hammerton
+position: "Graduate Student, Epidemiology & Biostatistics"
+address: "University of Georgia College of Public Health"
+phone: 423 544 2453 
+email: 'savannah.hammerton@uga.edu'
+github: smhammerton
+linkedin: smhammerton
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(googledrive)
+library(readxl)
+library(tibble)
+#googledrive::drive_download('cv_data', overwrite = TRUE)
+cv_data <- readxl::read_xlsx('cv_data.xlsx')
+```
+
+# Personal Statement  
+
+\setlength\parindent{24pt} When I first applied for the MPH program at UGA, I reflected on my path to finding a career that I could be passionate about and excel in. This path took me in a number of different directions, but when I began my course of study at UGA in Fall 2020, I quickly became certain that I had found the career I had been searching for. I became increasingly interested in learning about epidemiologic and biostatistical methods; so much so that I applied for and transferred to the MS program in Epidemiology and Biostatistics. As I have worked in my classes for this degree, I have found that the more I learn, the more I realize I don’t know. I have also found that O have a strong desire to learn more and build expertise in this field. To that end, I am applying to the Ph.D program in Epidemiology and Biostatistics, with a concentration in Epidemiology. 
+
+\setlength\parindent{24pt} I have particular interest in the epidemiology of infectious diseases. I have worked to develop expertise in this area during my master's program, and hope to continue this development throughout my doctoral program. More specifically, I am fascinated by the One Health approach to studying infectious diseases, and would like to build subject matter expertise in the effects of interactions between humans, non-human animals, and the environment. I aim to study these things through the development of conceptual understanding of the various ASPECTS contributing to disease spread, and applying that knowledge to strong epidmiological, biostatistical, and modeling SKILLS. 
+
+\setlength\parindent{24pt} 
