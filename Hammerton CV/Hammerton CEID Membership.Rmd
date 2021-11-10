@@ -1,0 +1,41 @@
+---
+name: Savannah
+surname: Hammerton
+position: "Graduate Student, Epidemiology & Biostatistics"
+address: "University of Georgia College of Public Health"
+phone: 423 544 2453 
+email: 'savannah.hammerton@uga.edu'
+github: smhammerton
+linkedin: smhammerton
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(googledrive)
+library(readxl)
+library(tibble)
+#googledrive::drive_download('cv_data', overwrite = TRUE)
+cv_data <- readxl::read_xlsx('cv_data.xlsx')
+```
+
+# Statement of Interest  
+
+As a Master's student in Epidemiology & Biostatistics, with a particular interest in applying the methods of these fields to the study of infectious diseases, I believe I have much to offer the Center for Ecology of Infectious Diseases. I also believe I would benefit greatly in academic, professional, and subject matter expertise development through my participation as a CEID member. My advanced coursework has given me experience in biostatistics, data analysis, and modeling that I can apply to various topics, and that I would love to apply to the ecology of infectious diseases. My epidemiology courses have not only given me a strong understanding of study design and analysis methodology, but have also helped me develop my reasoning, problem solving, and critical thinking skills, allowing me to approach problems and questions in a larger contextual framework in order to determine sound, effective methods to answering those questions. What I believe will be strongest reason for my success in participating as a CEID member is my passion and motivation for studying infectious diseases. I truly enjoy studying, learning, and working in this field, and am enthusiastic about building a career within it that benefits others. I would be delighted to be able to help in CEID research and events, not only because I believe it will help me develop as a professional, but because it would give me an opportunity to make a difference through my work. I would be happy to help in whatever capacity I would be most useful. 
+
+
+
+
+# Research Interests 
+
+  * Infectious Diseases 
+  * Emerging, Zoonotic, and Tropical Diseases 
+  * Disease Forecasting 
+  * Infectious Disease Dynamics 
+  * One Health 
+  * Spillover Events
+  * Predictive Modeling 
+  
+  
