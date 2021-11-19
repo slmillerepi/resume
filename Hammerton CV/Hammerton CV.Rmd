@@ -17,6 +17,7 @@ library(vitae)
 library(googledrive)
 library(readxl)
 library(tibble)
+library(tidyverse)
 #googledrive::drive_download('cv_data', overwrite = TRUE)
 cv_data <- readxl::read_xlsx('cv_data.xlsx')
 ```
@@ -32,7 +33,7 @@ cv_data %>%
   filter(section == 'education', in_resume == 'TRUE') %>% 
   detailed_entries(
     title,
-    paste0(start, "-", as.integer(end)),
+    paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
     institution, 
     loc
   )
@@ -45,7 +46,7 @@ cv_data %>%
   filter(section == 'rel_exp', in_resume == 'TRUE') %>% 
   detailed_entries(
     title,
-    paste0(start, "-", as.integer(end)),
+    paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
     institution, 
     loc,
     description
@@ -59,7 +60,7 @@ cv_data %>%
   filter(section == 'projects', in_resume == 'TRUE') %>% 
   detailed_entries(
     institution, 
-    end,
+    paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
     title,
     description
   )
@@ -74,7 +75,7 @@ cv_data %>%
   filter(section == 'certs', in_resume == 'TRUE') %>%
   detailed_entries(
     loc,
-    end, 
+    as.character(as.integer(end)), 
     title
   )
 ```
@@ -98,7 +99,7 @@ cv_data %>%
   filter(section == 'org', in_resume == 'TRUE') %>% 
   detailed_entries(
     description, 
-    paste0(start, '-', end),
+    paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
     institution,
     title
   )
