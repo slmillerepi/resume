@@ -7,6 +7,7 @@ phone: 423 544 2453
 email: 'savannah.hammerton@uga.edu'
 github: smhammerton
 linkedin: smhammerton
+www: smhammerton.com
 date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv
 ---
@@ -24,7 +25,7 @@ cv_data <- readxl::read_xlsx('cv_data.xlsx')
 
 # About
 
-Graduate student working towards MS in Epidemiology & Biostatistics (concentration in Epidemiology) and Graduate Certificate in Infectious Disease Epidemiology. Particular interest and research emphasis in infectious diseases, infectious disease dynamics, and One Health. Past experience in healthcare, providing strong contextual understanding of disease determinants, prevention, treatment, and outcomes, as well as an understanding of the real world implications of public health research and practice on individuals. This experience also drives context-aware data analytic approaches to answering epidemiological questions. Passionate and driven to learn as much as possible in order to become an effective epidemiologist, with the goal of building a career that benefits others. 
+Graduate student working towards PhD in Epidemiology & Biostatistics (concentration in Data Analysis and Modeling). Particular interest and research emphasis in infectious diseases, infectious disease dynamics and modeling, and data analysis. Past experience in healthcare, providing strong contextual understanding of disease determinants, prevention, treatment, and outcomes, as well as an understanding of the real world implications of public health research and practice on individuals. This experience also drives context-aware data analytic approaches to answering epidemiological questions. Passionate and driven to build a career that benefits others. 
 
 # Education
 
