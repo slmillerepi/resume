@@ -1,7 +1,7 @@
 ---
 name: Savannah
 surname: Hammerton
-position: "Graduate Student, Epidemiology & Biostatistics"
+position: "PhD Student, Epidemiology & Biostatistics"
 address: "University of Georgia College of Public Health"
 phone: 423 544 2453 
 email: 'savannah.hammerton@uga.edu'
@@ -19,8 +19,10 @@ library(googledrive)
 library(readxl)
 library(tibble)
 library(tidyverse)
-#googledrive::drive_download('cv_data', overwrite = TRUE)
-cv_data <- readxl::read_xlsx('cv_data.xlsx')
+# googledrive::drive_download('cv_data',
+#                             path = here::here("cv_data.xlsx"),
+#                             overwrite = TRUE)
+cv_data <- readxl::read_xlsx(here::here('cv_data.xlsx'))
 ```
 
 # About
@@ -60,10 +62,10 @@ cv_data %>%
 cv_data %>% 
   filter(section == 'projects', in_resume == 'TRUE') %>% 
   detailed_entries(
-    institution, 
+    description, 
     paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
     title,
-    description
+    institution
   )
 
 ```
@@ -81,6 +83,24 @@ cv_data %>%
   )
 ```
 
+
+# Service 
+
+```{r service}
+cv_data |> 
+  filter(section == "service", in_resume == "TRUE") |> 
+  detailed_entries(
+    title,
+    paste0(as.character(start)),
+    institution,
+    loc,
+    description
+  )
+```
+
+
+\pagebreak
+
 # Skills
 
 ```{r skills}
@@ -92,6 +112,7 @@ cv_data %>%
     title
   )
 ```
+
 
 # Organizations 
 
