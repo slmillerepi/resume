@@ -1,0 +1,33 @@
+---
+name: Savannah
+surname: Hammerton
+position: "Graduate Student, Epidemiology & Biostatistics"
+address: "University of Georgia College of Public Health"
+phone: 423 544 2453 
+email: 'savannah.hammerton@uga.edu'
+github: smhammerton
+linkedin: smhammerton
+date: "`r format(Sys.time(), '%B %Y')`"
+header-includes:
+   - \usepackage{setspace} \onehalfspacing
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Teaching Philosophy Statement  
+
+\setlength\parindent{24pt} My teaching philosophy is based around identifying needs of students and working to fulfill those needs. Experience in healthcare has impressed on me the importance of understanding as the primary outcome of every instructive interaction. I prioritize the assessment of an individual's or group's starting point prior to instruction as well as a similar assessment at the end of the experience to identify both the needs and the fulfillment of those needs. As a researcher primarily focused in infectious disease modeling, I recognize the potential intimidation of entering the field and work to ensure students feel supported and capable at every interaction. 
+
+\setlength\parindent{24pt} Patient education is a core principle of nursing training and practice. It is vitally important that patients understand diagnoses and, in particular, treatment and discharge instructions. Every patient interaction should include the assessment of need for education on any health topic, as well as education implementation when any need is identified. I carry these concepts forward into my non-clinical education philosophy as well. I believe true engagement with and attention to potential learners is the basis of effective teaching and aim to get to the root of potential confusion and misunderstandings in students whenever they appear to struggle with a concept. I also consider the individual learner as I work to educate them and include an assessment of true understanding in each learning experience. Rather than asking students something like, "do you understand?", I focus on asking things such as, "can you explain how...?". This is a skill learned in patient care, used to ensure that patients know how to follow discharge instructions, that I believe translates very well to all education and I aim to incorporate it in all teaching. 
+
+\setlength\parindent{24pt} A key principle in improving public health in a community is working with the community to determine what the members believe are public health problems, and then working with them to intervene on those issues. This increases the motivation and investment of community members to participate in the intervention and work towards its success. I believe this concept is also very relevant to educational experiences. Identifying topical weakness and confusion of students by asking them what their concerns are and working with them to address those concerns can help students feel more involved and in control of their educational experiences. I believe this can inspire a sense of autonomy in students, motivating them to overcome their challenges. 
+
+\setlength\parindent{24pt} Infectious disease modeling based in epidemiology and biostatistics requires understanding in concepts from a variety of backgrounds, including not only basic epidemiology and biostatistics, but additional concepts just as coding, immunology, microbiology, virology, etc. It is rare for students to enter this field with experience in all these topics, and it can be easy to become overwhelmed by the topics one has not had experience in before. When interacting with students interested in the field, I work to encourage them, both in their successes and their challenges. I am very passionate about the field I work in and hope to communicate that to students and encourage a similar passion within them. Finding concepts that relate to students' interests and working with them to translate those concepts to their areas of interest is another way to increase their motivation to overcome challenges and make the most of their educational experiences. 
+
+\setlength\parindent{24pt} My teaching philosophy is totally student centered. I believe that collaborating with students to identify their particular needs and consistently and accurately assessing their progress in meeting those needs allows them to make the most of the educational experience and progress towards their goals. I also continue to learn how to become a better, more effective instructor and improve the experiences of my students. 
+
+\makecvfooter{November 2022}{Savannah Hammerton~~~·~~~Teaching Philosophy Statement}{1}
