@@ -99,7 +99,6 @@ cv_data |>
 ```
 
 
-\pagebreak
 
 # Skills
 
@@ -113,6 +112,7 @@ cv_data %>%
   )
 ```
 
+\pagebreak
 
 # Organizations 
 
