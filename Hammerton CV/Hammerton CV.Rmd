@@ -19,10 +19,10 @@ library(googledrive)
 library(readxl)
 library(tibble)
 library(tidyverse)
-# googledrive::drive_download('cv_data',
-#                             path = here::here("cv_data.xlsx"),
+# googledrive::drive_download('cv_dat2',
+#                             path = here::here("cv_dat2.xlsx"),
 #                             overwrite = TRUE)
-cv_data <- readxl::read_xlsx(here::here('cv_data.xlsx'))
+cv_data <- readxl::read_xlsx(here::here('cv_dat2.xlsx'))
 ```
 
 # About
@@ -41,6 +41,8 @@ cv_data %>%
     loc
   )
 ```
+
+
 
 # Relevant Experience 
 
@@ -112,7 +114,21 @@ cv_data %>%
   )
 ```
 
-\pagebreak
+
+# Presentations
+
+```{r presentations}
+cv_data |> 
+  filter(section == "presentations", in_resume == "TRUE") |> 
+  detailed_entries(
+    institution, 
+    paste0(as.integer(start)),
+    title, 
+    loc,
+    description
+  )
+```
+
 
 # Organizations 
 
@@ -126,3 +142,7 @@ cv_data %>%
     title
   )
 ```
+
+
+
+
