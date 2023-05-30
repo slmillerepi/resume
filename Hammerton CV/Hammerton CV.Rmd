@@ -23,17 +23,19 @@ library(tidyverse)
 #                             path = here::here("cv_dat2.xlsx"),
 #                             overwrite = TRUE)
 cv_data <- readxl::read_xlsx(here::here('cv_dat2.xlsx'))
+
+options(tinytex.verbose = TRUE)
 ```
 
 # About
 
-Graduate student working towards PhD in Epidemiology & Biostatistics (concentration in Data Analysis and Modeling). Particular interest and research emphasis in infectious diseases, infectious disease dynamics and modeling, and data analysis. Past experience in healthcare, providing strong contextual understanding of disease determinants, prevention, treatment, and outcomes, as well as an understanding of the real world implications of public health research and practice on individuals. This experience also drives context-aware data analytic approaches to answering epidemiological questions. Passionate and driven to build a career that benefits others. 
+Graduate student working towards PhD in Epidemiology & Biostatistics (concentration in Data Analysis and Modeling). Particular interest and research emphasis in infectious diseases, correlates of protection for viral vaccine development, infectious disease dynamics, and modeling. Past experience in healthcare, providing strong contextual understanding of disease determinants, prevention, treatment, and outcomes, as well as an understanding of the real world implications of public health research and practice on individuals. This experience also drives context-aware data analytic approaches to answering epidemiological questions. Passionate and driven to build a career that benefits others. 
 
 # Education
 
 ```{r education}
-cv_data %>% 
-  filter(section == 'education', in_resume == 'TRUE') %>% 
+cv_data |> 
+  filter(section == 'education', in_resume == 'TRUE') |> 
   detailed_entries(
     title,
     paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
@@ -47,8 +49,8 @@ cv_data %>%
 # Relevant Experience 
 
 ```{r experience}
-cv_data %>% 
-  filter(section == 'rel_exp', in_resume == 'TRUE') %>% 
+cv_data |> 
+  filter(section == 'rel_exp', in_resume == 'TRUE') |> 
   detailed_entries(
     title,
     paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
@@ -61,8 +63,8 @@ cv_data %>%
 # Research
 
 ```{r}
-cv_data %>% 
-  filter(section == 'projects', in_resume == 'TRUE') %>% 
+cv_data |> 
+  filter(section == 'projects', in_resume == 'TRUE') |> 
   detailed_entries(
     description, 
     paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
@@ -70,48 +72,6 @@ cv_data %>%
     institution
   )
 
-```
-
-
-# Certifications
-
-```{r certifications}
-cv_data %>% 
-  filter(section == 'certs', in_resume == 'TRUE') %>%
-  detailed_entries(
-    loc,
-    as.character(as.integer(end)), 
-    title
-  )
-```
-
-
-# Service 
-
-```{r service}
-cv_data |> 
-  filter(section == "service", in_resume == "TRUE") |> 
-  detailed_entries(
-    title,
-    paste0(as.character(start)),
-    institution,
-    loc,
-    description
-  )
-```
-
-
-
-# Skills
-
-```{r skills}
-cv_data %>% 
-  filter(section == 'skills', in_resume == 'TRUE') %>% 
-  detailed_entries(
-    description,
-    NA,
-    title
-  )
 ```
 
 
@@ -130,16 +90,70 @@ cv_data |>
 ```
 
 
+# Honors and Awards
+
+```{r honors_awards}
+cv_data |> 
+  filter(section == 'honors_awards', in_resume == 'TRUE') |>
+  detailed_entries(
+    institution,
+    as.character(as.integer(end)),
+    title,
+    loc
+  )
+```
+
+# Certifications and Professional Training
+
+```{r certifications}
+cv_data |> 
+  filter(section == 'certs', in_resume == 'TRUE') |>
+  detailed_entries(
+    loc,
+    as.character(as.integer(end)), 
+    title
+  )
+```
+
+\pagebreak
+
+# Service 
+
+```{r service}
+cv_data |> 
+  filter(section == "service", in_resume == "TRUE") |> 
+  detailed_entries(
+    title,
+    paste0(as.character(start)),
+    institution,
+    loc,
+    description
+  )
+```
+
+
+# Skills
+
+```{r skills}
+cv_data |> 
+  filter(section == 'skills', in_resume == 'TRUE') |> 
+  detailed_entries(
+    description,
+    NA,
+    title
+  )
+```
+
 # Organizations 
 
 ```{r organizations}
-cv_data %>% 
-  filter(section == 'org', in_resume == 'TRUE') %>% 
+cv_data |> 
+  filter(section == 'org', in_resume == 'TRUE') |> 
   detailed_entries(
     description, 
     paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
     institution,
-    title
+    loc
   )
 ```
 
