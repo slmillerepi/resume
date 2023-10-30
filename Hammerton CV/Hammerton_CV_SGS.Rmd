@@ -60,20 +60,6 @@ cv_data |>
   )
 ```
 
-# Research
-
-```{r}
-cv_data |> 
-  filter(section == 'projects', in_resume == 'TRUE') |> 
-  detailed_entries(
-    description, 
-    paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
-    title,
-    institution
-  )
-
-```
-
 
 # Presentations
 
@@ -97,23 +83,13 @@ cv_data |>
   filter(section == 'honors_awards', in_resume == 'TRUE') |>
   detailed_entries(
     institution,
-    as.character(as.integer(end)),
+    ifelse(is.na(end), 
+           paste0(as.character(as.integer(start))), 
+                  paste0(as.character(as.integer(start)), '-', 
+                         if_else(end == "Present", as.character(end), 
+                                 sprintf("%i", as.integer(end))))),
     title,
     loc
-  )
-```
-
-\pagebreak
-
-# Certifications and Professional Training
-
-```{r certifications}
-cv_data |> 
-  filter(section == 'certs', in_resume == 'TRUE') |>
-  detailed_entries(
-    loc,
-    as.character(as.integer(end)), 
-    title
   )
 ```
 
@@ -133,17 +109,6 @@ cv_data |>
 ```
 
 
-# Skills
-
-```{r skills}
-cv_data |> 
-  filter(section == 'skills', in_resume == 'TRUE') |> 
-  detailed_entries(
-    description,
-    NA,
-    title
-  )
-```
 
 
 

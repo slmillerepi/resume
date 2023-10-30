@@ -1,0 +1,35 @@
+---
+name: Savannah
+surname: Hammerton
+position: "PhD Student, Epidemiology & Biostatistics"
+address: "University of Georgia College of Public Health"
+phone: 423 544 2453 
+email: 'savannah.hammerton@uga.edu'
+github: smhammerton
+linkedin: smhammerton
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Synopsis  
+
+\onehalfspacing\setlength\parindent{24pt} Norovirus is the most common cause of acute gastroenteritis (AGE) in the United States and causes one in five cases of AGE worldwide. There is no licensed vaccine to date, although several candidates have been developed. To develop an efficacious vaccine, there must be a strong understanding of which immune cells should be boosted by that vaccine in order to confer protection against the virus. Many researchers aim to understand which biomarkers are associated with protection against infection, disease, and other clinical outcomes; these are often referred to as "correlates of protection." In my thesis, I aimed to assess the true relationship between antibodies commonly used as correlates of protection against norovirus clinical outcomes. 
+
+\setlength\parindent{24pt} I used data from a vaccine safety and efficacy trial and challenge study with healthy adults who were given an experimental vaccine or placebo and then challenged with live norovirus. Primary results were published with a focus on differences in geometric mean titers prior to challenge in those who did and did not experience outcomes of interest, usually stratified by treatment group (vaccine or placebo). To assess the relationship between antibody titers and clinical outcomes, I re-examined the outcomes previously reported using regression and machine learning methods. 
+
+\setlength\parindent{24pt} I modeled protection against infection, protocol-defined illness, and vomiting or diarrhea, as well as reported Vesikari (disease severity) scores as outcomes of interest, with HBGA-blocking, IgA, IgG, and Pan-Ig antibodies measured prior to virus challenge as primary predictors. I also explored the impact of vaccination and demographic factors such as age, gender, and race through covariate inclusion or model stratification. Bivariate regression, multivariable regression, and random forest models were fit and assessed. Logistic and linear regression models were used for protection outcomes and Vesikari scores, respectively. Random forest models included all covariates examined in any model. 
+
+
+\setlength\parindent{24pt} Bivariate regression models generally performed about as well as or better than models including other covariates. Models stratified by treatment group exhibited substantial differences between the two groups. While the placebo group tended to experience decreased infection and illness as antibody titers increased, the relationship in the vaccine group often appeared very different. The direction of the association even changed directions in many cases, with higher antibodies associated with higher probability of norovirus outcomes. These results indicate that antibodies may not be true correlates of protection against norovirus and that further research should be conducted to understand how antibodies and other immune cells interact to protect against this infection. 
+
+\setlength\parindent{24pt} Showing the complexity of the relationship between norovirus antibodies and clinical outcomes will help in vaccine development. These results indicate the need for further exploration into which immune cells best convey protection and should be targeted by vaccination. They show the importance of modeling the full relationship between antibodies and outcomes, especially as mediated by vaccination, rather than only calculating the difference in mean titers between groups. Upon publication of the finalized manuscript, norovirus researchers should have motivation to explore other correlates of protection to reduce the disease burden of this virus. 
+
+
+
+
+\makecvfooter{October 2023}{Savannah Hammerton~~~·~~~Thesis Synopsis}{1}
