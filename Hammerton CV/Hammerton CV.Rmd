@@ -1,13 +1,12 @@
 ---
-name: Savannah
-surname: Hammerton
-position: "PhD Student, Epidemiology & Biostatistics"
+name: Savannah L.
+surname: Miller
+position: "PhD Candidate, Epidemiology & Biostatistics"
 address: "University of Georgia College of Public Health"
 phone: 423 544 2453 
 email: 'savannah.hammerton@uga.edu'
-github: smhammerton
-linkedin: smhammerton
-www: smhammerton.com
+github: slmillerepi
+linkedin: slmillerepi
 date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv
 ---
@@ -29,7 +28,7 @@ options(tinytex.verbose = TRUE)
 
 # About
 
-Graduate student working towards PhD in Epidemiology & Biostatistics (concentration in Data Analysis and Modeling). Particular interest and research emphasis in infectious diseases and correlates of protection for viral vaccine development and assessment. Past experience in healthcare, providing strong contextual understanding of disease determinants, prevention, treatment, and outcomes, as well as an understanding of the real world implications of public health research and practice on individuals. This experience also drives context-aware data analytic approaches to answering epidemiological questions. Passionate and driven to build a career that benefits others. 
+Graduate student pursuing a PhD in Epidemiology and Biostatistics, with a concentration in Data Analysis and Modeling. I have a keen interest in infectious diseases, focusing on the correlates of protection for viral vaccine development and evaluation. My background in healthcare has equipped me with a robust understanding of disease determinants, prevention strategies, treatment options, and health outcomes, providing valuable insights into the real-world implications of public health research and practice on individuals. I am passionate about leveraging my skills and knowledge to build a career dedicated to improving public health and benefiting communities.
 
 # Education
 
@@ -89,6 +88,28 @@ cv_data |>
   )
 ```
 
+# Publications
+
+  - Note: Name change from Savannah M. Hammerton to Savannah L. Miller occurred in 2025.
+
+**Hammerton, S. M.**, Billings, W. Z., Hemme, H., Ross, T. M., Shen, Y., & Handel, A. (2024). Estimating Standard-Dose and High-Dose Fluzone Vaccine Efficacies for Influenza A Based on Hemagglutination Inhibition Titers. The Journal of Infectious Diseases, jiae615. https://doi.org/10.1093/infdis/jiae615
+
+Billings, W. Z., Ge, Y., Knight, J. H., Hemme, H., **Hammerton, S. M.**, Skarlupka, A. L., Cao, W., Shen, Y., Bahl, J., Thomas, P. G., Ross, T. M., & Handel, A. (2025). High-Dose Inactivated Influenza Vaccine Inconsistently Improves Heterologous Antibody Responses in an Older Human Cohort. The Journal of Infectious Diseases, jiaf003. https://doi.org/10.1093/infdis/jiaf003
+
+
+# Teaching and Mentorship 
+
+```{r mentorship}
+cv_data |> 
+  filter(section == 'mentorship', in_resume == 'TRUE') |>
+  detailed_entries(
+    institution,
+    paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
+    title,
+    loc,
+    description
+  )
+```
 
 # Honors and Awards
 
@@ -97,13 +118,13 @@ cv_data |>
   filter(section == 'honors_awards', in_resume == 'TRUE') |>
   detailed_entries(
     institution,
-    as.character(as.integer(end)),
+    paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
     title,
-    loc
+    loc,
+    description
   )
 ```
 
-\pagebreak
 
 # Certifications and Professional Training
 
@@ -129,6 +150,19 @@ cv_data |>
     institution,
     loc,
     description
+  )
+```
+
+# Organizations
+
+```{r org}
+cv_data |>
+  filter(section == 'org', in_resume == 'TRUE') |>
+  detailed_entries(
+    NA,
+    paste0(as.character(as.integer(start)), '-', if_else(end == "Present", as.character(end), sprintf("%i", as.integer(end)))),
+    institution,
+    loc
   )
 ```
 
